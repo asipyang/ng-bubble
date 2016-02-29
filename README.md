@@ -21,7 +21,7 @@ to your html file. Make sure that `anglar.js` and `interact.js` are loaded befor
 
 Second, add the **itman.bubble** as a dependency to your AngularJS module.
 
-There are two ways to use *ng-bubble* as follows.
+You can use *ng-bubble* through the service, **BubbleService**.
 
 ## Service
 **BubbleService** can be injected to the controller or service. The methods of this service are:
@@ -60,7 +60,7 @@ BubbleService.create({
 });
 ```
 
-The [online demo](http://codepen.io/asip/pen/qZBYzR/) displays the basic options of creating bubbles. You also can watch the message chaged when the creating process has done. And you can use the **remove** method to destory each bubble.
+The [online demo](http://codepen.io/asip/pen/qZBYzR/) displays the basic options of creating bubbles. You also can watch the change of the message from clicking the button to the creating process has done. And you can destroy each bubble by using the **remove** method.
 
 
 ### removeAllBubbles
@@ -71,3 +71,29 @@ BubbleService.removeAllBubbles();
 ```
 
 The [online demo](http://codepen.io/asip/pen/PNoBqo/) displays the usage of the templateUrl field and removeAllBubbles method.
+
+### Animation
+The BubbleService support the animation hooks of *ng-enter* and *ng-leave* when create a bubble or remove it.
+
+First, you should include `angular-animate.js` in your html. Second, add the **ngAnimate** as a dependency to your AngularJS module.
+
+Then add some css like:
+
+```css
+.ng-bubble.ng-enter {
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  opacity: 0;
+}
+.ng-bubble.ng-leave {
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  opacity: 1;
+}
+.ng-bubble.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.ng-bubble.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+```
+
+Go [online demo](http://codepen.io/asip/pen/mPdYbX/) to check the animation effects.
