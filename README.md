@@ -73,7 +73,7 @@ BubbleService.removeAllBubbles();
 The [online demo](http://codepen.io/asip/pen/PNoBqo/) displays the usage of the templateUrl field and removeAllBubbles method.
 
 ### Animation
-The BubbleService support the animation hooks of *ng-enter* and *ng-leave* when create a bubble or remove it.
+The BubbleService support the animation hooks of *ng-enter* and *ng-leave* when creating a bubble or removing it.
 
 First, you should include `angular-animate.js` in your html. Second, add the **ngAnimate** as a dependency to your AngularJS module.
 
